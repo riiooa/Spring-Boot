@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:insert="fragments/header.html"/>
+    <body>
+        <div class="container">
+            <div th:insert="fragments/menu.html"/>
+            <div class="card shadow-2-strong card-registration">
+                <div class="card-body p-4 p-md-5">
+                    <form method="post" th:action="@{/latihan-form/store}" th:object="${mhs}">
+                        <div class="row form-group">
+                            <div class="col-md-12 mb-4 ">
+                                <div class="form-outline d-flex">
+                                    <label class="col-md-2 form-label" for="name">Nama Mahasiswa</label>
+                                    <input type="text" th:field="*{Nama}"
+                                        class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12 mb-4">
+                                <div class="form-outline d-flex">
+                                    <label class="col-md-2 form-label" for="placeofbirth">Tempat Lahir</label>
+                                    <input type="text" th:field="*{TempatLahir}" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row form-group">
+                            <div class="col-md-12 mb-4 d-flex align-items-center">
+                                <div class="form-outline datepicker d-flex w-100">
+                                    <label for="dateofbirth" class="col-md-2 form-label">Tanggal lahir</label>
+                                    <input type="text" class="form-control"
+                                        th:field="*{TanggalLahir}" />
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="mt-4 pt-2">
+                            <input class="btn btn-primary" type="submit" value="Daftar" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
